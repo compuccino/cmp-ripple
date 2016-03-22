@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>…</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      font-size: 15px;
+      line-height: 1.4em;
+    }
+    
+    .button-test {
+      background: red;
+      color: white;
+      font-weight: bold;
+      
+      padding: 2em 4em;
+      font-size: 2.4em;
+      
+      /* for circle pos */
+      position: relative;
+      overflow: hidden;
+      
+      /*remove button properties*/
+      border: none;
+    }
+    
+    .button-ripple.js-ripple:before {
+      /* ripple circle */
+      background: white;
+      border-radius: 50%;
+      
+      /* square size of button width */
+      width: 100%;
+      padding-top: 100%;
+      height: 0;
+      
+      /*position*/
+      content: '';
+      display: block;
+      position: absolute;
+      
+      top: 50%;
+      left: 50%;
+      
+      margin-left: -50%;
+      margin-top: -50%;
+    
+      /* animation */
+      opacity: 1;
+      transform: scale(0);
+      
+      -webkit-animation-name: ripple-animation;
+      -webkit-animation-duration: 1.8s;
+      -webkit-animation-timing-function: easeOut;
+      
+      animation-name: ripple-animation;
+      animation-duration: 1.8s;
+      animation-timing-function: easeOut;
+    }
+
+    @-webkit-keyframes ripple-animation {
+      100% {
+        opacity: 0;
+        transform: scale(3);
+      }
+    }
+
+    @keyframes ripple-animation {
+      100% {
+        opacity: 0;
+        transform: scale(3);
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <button class="button-test button-ripple">Click me</button>
+
+  <script>
+    
+    updateRipple = function() {
+      var rippleUs = document.querySelectorAll('.button-ripple');
+      
+      for (var index = 0; index < rippleUs.length; i++) {
+        //TODO: make it work with multiple fast click
+        
+        rippleMe = rippleUs[index];
+        rippleMe.addEventListener("click", function( event ) {
+           this.classList.add('js-ripple');
+         });
+      }
+    }
+    
+    updateRipple();
+
+  </script>
+
+</body>
+</html>
