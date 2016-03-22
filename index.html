@@ -87,8 +87,8 @@
     
     updateRipple = function(elements) {
       
-      for (var index = 0; index < rippleUs.length; index++) {
-        rippleMe = rippleUs[index];
+      for (var index = 0; index < elements.length; index++) {
+        rippleMe = elements[index];
         
         rippleMe.addEventListener("click", function( clickEvent ) {
           //TODO: remove element once it's finished – use animationend
