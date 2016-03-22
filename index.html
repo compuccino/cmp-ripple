@@ -87,6 +87,9 @@
     
     updateRipple = function(elements) {
       
+      //assume single element
+      if (!elements.isArray) {elements = [elements]; }
+      
       for (var index = 0; index < elements.length; index++) {
         rippleMe = elements[index];
         
