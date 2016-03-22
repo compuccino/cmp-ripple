@@ -86,6 +86,9 @@
   <script>
     
     updateRipple = function(elements) {
+
+      //get browser prefixed animation event
+      var animationEvent = stylePrefix('animationend');
       
       //assume single element
       if (!(elements instanceof NodeList)) {
@@ -96,7 +99,6 @@
         rippleMe = elements[index];
         
         rippleMe.addEventListener("click", function( clickEvent ) {
-          //TODO: remove element once it's finished – use animationend
           
           //offset relation = (click offset - element offset) ÷ element dimension
           var offsetRel = {
@@ -108,6 +110,11 @@
           var rippleElement = document.createElement('span');
           rippleElement.className = 'ripple-animation-holder';
           rippleElement.setAttribute('style','top: '+ offsetRel.top*100 +'%; left: '+ offsetRel.left*100 +'%;');
+          
+          //self-destruct after animation
+          rippleElement.addEventListener(animationEvent, function() {
+             this.parentNode.removeChild(this);
+          });
           
           this.insertBefore(rippleElement, this.firstChild);
         });
@@ -126,6 +133,36 @@
         }
     
     }
+    
+    /**
+     * Testing on prefixes
+     *
+     * stolen from David Walsh here:
+     * https://davidwalsh.name/css-animation-callback
+     * originally stolen from Modernizr:
+     *
+     */
+    function stylePrefix(attributeName){
+      var prefixStyleLookup = {
+        'animationend': {
+          'animation':'animationend',
+          'WebkitAnimation':'webkitAnimationEnd'
+        },
+        'transitionend': {
+          'transition':'transitionend',
+          'WebkitTransition':'webkitTransitionEnd'
+        }
+      }
+    
+      var attribute;
+      var el = document.createElement('fakeTestElement');
+      for(attribute in prefixStyleLookup[attributeName]){
+          if( el.style[attribute] !== undefined ){
+              return prefixStyleLookup[attributeName][attribute];
+          }
+      }
+    }
+
     
     
     var rippleUs = document.querySelectorAll('.element-ripple');
