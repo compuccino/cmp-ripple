@@ -90,6 +90,9 @@
       //get browser prefixed animation event
       var animationEvent = stylePrefix('animationend');
       
+      //check for element + animation event support
+      if (elements && animationEvent) {
+
       //assume single element
       if (!(elements instanceof NodeList)) {
         elements = [elements];
@@ -118,6 +121,8 @@
           
           this.insertBefore(rippleElement, this.firstChild);
         });
+      }
+      
       }
     }
     
