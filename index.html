@@ -96,6 +96,19 @@
     }
     
     updateRipple();
+    //helper function for element offset
+    offset = function(element){
+      var rect = element.getBoundingClientRect();
+      
+      return offsetObject =
+        {
+          top: rect.top + document.body.scrollTop,
+          left: rect.left + document.body.scrollLeft
+        }
+    
+    }
+    
+    
 
   </script>
 
