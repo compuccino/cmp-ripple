@@ -22,7 +22,7 @@
       position: relative;
       overflow: hidden;
       
-      /*remove button properties*/
+      /* remove button properties */
       border: none;
     }
     
@@ -31,21 +31,22 @@
       background: white;
       border-radius: 50%;
       
-      /* square size of button width */
+      /* square size of element width */
       width: 100%;
       padding-top: 100%;
       height: 0;
       
-      /*position*/
-      content: '';
+      /* position */
       display: block;
       position: absolute;
       
+      margin-left: -50%;
+      margin-top: -50%;
+      
+      /* fallback w/o click value */
       top: 50%;
       left: 50%;
       
-      margin-left: -50%;
-      margin-top: -50%;
     
       /* animation */
       opacity: 1;
@@ -77,7 +78,10 @@
 </head>
 <body>
 
-    <button class="button-test button-ripple">Click me</button>
+  <button class="button-test element-ripple">Click me</button>
+  <button class="button-test element-ripple">Or me!</button>
+  <button class="button-test element-ripple">No, me!</button>
+  <button class="button-test element-ripple">Click me instead</button>
 
   <script>
     
@@ -86,9 +90,9 @@
       for (var index = 0; index < rippleUs.length; index++) {
         rippleMe = rippleUs[index];
         
-        
-          //TODO: remove element once it's finished
         rippleMe.addEventListener("click", function( clickEvent ) {
+          //TODO: remove element once it's finished – use animationend
+          
           //offset relation = (click offset - element offset) ÷ element dimension
           var offsetRel = {
             left : ( clickEvent.clientX - offset(this).left ) / this.offsetWidth,
