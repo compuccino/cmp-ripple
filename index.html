@@ -88,9 +88,15 @@
         rippleMe = rippleUs[index];
         
         
-        rippleMe.addEventListener("click", function( event ) {
           //TODO: remove element once it's finished
-          rippleMe.insertAdjacentHTML('afterbegin', '<span class="ripple-animation-holder full-span"></span>');
+        rippleMe.addEventListener("click", function( clickEvent ) {
+          //offset relation = (click offset - element offset) ÷ element dimension
+          var offsetRel = {
+            left : ( clickEvent.clientX - offset(this).left ) / this.offsetWidth,
+            top  : ( clickEvent.clientY - offset(this).top ) / this.offsetHeight
+          }
+          
+          this.insertAdjacentHTML('afterbegin', '<span class="ripple-animation-holder full-span" style="top: '+ offsetRel.top*100 +'%; left: '+ offsetRel.left*100 +'%;"></span>');
         });
       }
     }
