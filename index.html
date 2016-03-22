@@ -26,7 +26,7 @@
       border: none;
     }
     
-    .button-ripple.js-ripple:before {
+    .ripple-animation-holder {
       /* ripple circle */
       background: white;
       border-radius: 50%;
@@ -84,13 +84,15 @@
     updateRipple = function() {
       var rippleUs = document.querySelectorAll('.button-ripple');
       
-      for (var index = 0; index < rippleUs.length; i++) {
-        //TODO: make it work with multiple fast click
-        
+      for (var index = 0; index < rippleUs.length; index++) {
         rippleMe = rippleUs[index];
+        
+        var rippleAnimationMarkup = '<span class="ripple-animation-holder full-span"></span>';
+        
         rippleMe.addEventListener("click", function( event ) {
-           this.classList.add('js-ripple');
-         });
+          //TODO: remove element once it's finished
+          rippleMe.insertAdjacentHTML('afterbegin', '<span class="ripple-animation-holder full-span"></span>');
+        });
       }
     }
     
