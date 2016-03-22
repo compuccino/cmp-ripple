@@ -81,8 +81,7 @@
 
   <script>
     
-    updateRipple = function() {
-      var rippleUs = document.querySelectorAll('.button-ripple');
+    updateRipple = function(elements) {
       
       for (var index = 0; index < rippleUs.length; index++) {
         rippleMe = rippleUs[index];
@@ -101,7 +100,6 @@
       }
     }
     
-    updateRipple();
     //helper function for element offset
     offset = function(element){
       var rect = element.getBoundingClientRect();
@@ -114,6 +112,9 @@
     
     }
     
+    
+    var rippleUs = document.querySelectorAll('.element-ripple');
+    updateRipple(rippleUs);
     
 
   </script>
