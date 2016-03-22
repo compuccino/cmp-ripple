@@ -104,7 +104,12 @@
             top  : ( clickEvent.clientY - offset(this).top ) / this.offsetHeight
           }
           
-          this.insertAdjacentHTML('afterbegin', '<span class="ripple-animation-holder" style="top: '+ offsetRel.top*100 +'%; left: '+ offsetRel.left*100 +'%;"></span>');
+          //create element for ripple animation
+          var rippleElement = document.createElement('span');
+          rippleElement.className = 'ripple-animation-holder';
+          rippleElement.setAttribute('style','top: '+ offsetRel.top*100 +'%; left: '+ offsetRel.left*100 +'%;');
+          
+          this.insertBefore(rippleElement, this.firstChild);
         });
       }
     }
