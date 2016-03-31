@@ -26,55 +26,11 @@
       border: none;
     }
     
-    .ripple-animation-holder {
-      /* ripple circle */
-      background: white;
-      border-radius: 50%;
-      
-      /* square size of element width */
-      width: 100%;
-      padding-top: 100%;
-      height: 0;
-      
-      /* position */
-      display: block;
-      position: absolute;
-      
-      margin-left: -50%;
-      margin-top: -50%;
-      
-      /* fallback w/o click value */
-      top: 50%;
-      left: 50%;
-      
-    
-      /* animation */
-      opacity: 1;
-      transform: scale(0);
-      
-      -webkit-animation-name: ripple-animation;
-      -webkit-animation-duration: 2s;
-      -webkit-animation-timing-function: easeOut;
-      
-      animation-name: ripple-animation;
-      animation-duration:  2s;
-      animation-timing-function: easeOut;
     }
-
-    @-webkit-keyframes ripple-animation {
-      100% {
-        opacity: 0;
-        transform: scale(3);
-      }
     }
-
-    @keyframes ripple-animation {
-      100% {
-        opacity: 0;
-        transform: scale(3);
-      }
     }
   </style>
+  <link href="dist/cmp-ripple.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
