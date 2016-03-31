@@ -1,4 +1,11 @@
-.ripple-animation-holder {
+.cmp-ripple {
+  /* for circle pos */
+  position: relative;
+  overflow: hidden;
+}
+
+
+.cmp-ripple-animation {
   /* ripple circle */
   background: white;
   border-radius: 50%;

@@ -33,7 +33,7 @@ cmpRipple = function(elements) {
         
         //create element for ripple animation
         var rippleElement = document.createElement('span');
-        rippleElement.className = 'ripple-animation-holder';
+        rippleElement.className = 'cmp-ripple-animation';
         rippleElement.setAttribute('style','top: '+ offsetRel.top*100 +'%; left: '+ offsetRel.left*100 +'%;');
         
         //self-destruct after animation
