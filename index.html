@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Ripples</title>
@@ -10,16 +10,25 @@
       line-height: 1.4em;
     }
     
+    h2,
+    p {
+      line-height: 1.4em;
+    }
+    
+    h2 .cmp-ripple-animation {
+      background: rgba(255,255,0,0.4);
+    }
+    
+    p .cmp-ripple-animation {
+      background: rgba(0,255,255,0.4);;
+    }
+    
     .button-test {
       color: white;
       font-weight: bold;
       
       padding: 2em 4em;
-      font-size: 2.4em;
-      
-      /* for circle pos */
-      position: relative;
-      overflow: hidden;
+      font-size: 1.4em;
       
       /* remove button properties */
       border: none;
@@ -39,11 +48,21 @@
 </head>
 <body>
 
+  <h1>cmp-ripple (Demo)</h1>
+  
+  <p>Try clicking the elements on this page.</p>
+
   <button class="button-test button-pink cmp-ripple">Click me</button>
   <button class="button-test button-green cmp-ripple">Or me!</button>
-  <button class="button-test button-blue cmp-ripple">No, me!</button>
-  <button class="button-test button-green cmp-ripple">Click me instead</button>
-
+  <button class="button-test button-blue cmp-ripple">No! Click me instead</button>
+  
+  <h2 class="cmp-ripple">Click this heading, too</h1>
+  <p class="cmp-ripple">
+    This is a simple Text.<br>
+    You can click it too … – but you already knew that.<br>
+    The circle has a different color though.
+  </p>
+  
   <script src="cmp-ripple.js"></script>
   <script>
     var rippleUs = document.querySelectorAll('.cmp-ripple');
