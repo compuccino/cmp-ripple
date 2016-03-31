@@ -11,7 +11,6 @@
     }
     
     .button-test {
-      background: red;
       color: white;
       font-weight: bold;
       
@@ -26,18 +25,24 @@
       border: none;
     }
     
+    .button-pink {
+      background: DeepPink;
     }
+    .button-green {
+      background: LightGreen;
     }
+    .button-blue {
+      background: RoyalBlue;
     }
   </style>
   <link href="dist/cmp-ripple.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
-  <button class="button-test element-ripple">Click me</button>
-  <button class="button-test element-ripple">Or me!</button>
-  <button class="button-test element-ripple">No, me!</button>
-  <button class="button-test element-ripple">Click me instead</button>
+  <button class="button-test button-pink element-ripple">Click me</button>
+  <button class="button-test button-green element-ripple">Or me!</button>
+  <button class="button-test button-blue element-ripple">No, me!</button>
+  <button class="button-test button-green element-ripple">Click me instead</button>
 
   <script src="dist/cmp-ripple.js"></script>
   <script>
