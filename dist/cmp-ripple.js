@@ -1,4 +1,4 @@
-updateRipple = function(elements) {
+cmpRipple = function(elements) {
   //TODO: build encapsulated JS file
   //TODO: destroy() function removing click event handlers
   //TODO: build animationEvent/rippleElement only once?

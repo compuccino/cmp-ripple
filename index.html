@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>…</title>
+  <title>Ripples</title>
   <style>
     body {
       font-family: sans-serif;
@@ -39,15 +39,15 @@
 </head>
 <body>
 
-  <button class="button-test button-pink element-ripple">Click me</button>
-  <button class="button-test button-green element-ripple">Or me!</button>
-  <button class="button-test button-blue element-ripple">No, me!</button>
-  <button class="button-test button-green element-ripple">Click me instead</button>
+  <button class="button-test button-pink cmp-ripple">Click me</button>
+  <button class="button-test button-green cmp-ripple">Or me!</button>
+  <button class="button-test button-blue cmp-ripple">No, me!</button>
+  <button class="button-test button-green cmp-ripple">Click me instead</button>
 
   <script src="dist/cmp-ripple.js"></script>
   <script>
-    var rippleUs = document.querySelectorAll('.element-ripple');
-    updateRipple(rippleUs);
+    var rippleUs = document.querySelectorAll('.cmp-ripple');
+    cmpRipple(rippleUs);
   </script>
   
 </body>
