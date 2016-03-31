@@ -7,6 +7,8 @@ updateRipple = function(elements) {
   //TODO: custom class attribute
   //TODO: jQuery-object-checker, in case someone forgets `[0]`
 
+  'use strict';
+
   //get browser prefixed animation event
   var animationEvent = stylePrefix('animationend');
   
@@ -19,7 +21,7 @@ updateRipple = function(elements) {
     }
     
     for (var index = 0; index < elements.length; index++) {
-      rippleMe = elements[index];
+      var rippleMe = elements[index];
       
       rippleMe.addEventListener("click", function( clickEvent ) {
         
