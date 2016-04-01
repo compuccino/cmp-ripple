@@ -16,11 +16,20 @@
       line-height: 1.4em;
     }
     
-    h2 .cmp-ripple-animation {
+    .body-content {
+      overflow: hidden;
+    }
+    
+    .body-content > .cmp-ripple-animation:before{
+      background: DeepPink;
+      opacity: 0.03;
+    }
+    
+    h2 .cmp-ripple-animation:before {
       background: rgba(255,255,0,0.4);
     }
     
-    p .cmp-ripple-animation {
+    p .cmp-ripple-animation:before {
       background: rgba(0,255,255,0.4);;
     }
     
@@ -58,24 +67,31 @@
   <link href="cmp-ripple.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+  
+  <div class="body-content cmp-ripple">
 
-  <h1>cmp-ripple (Demo)</h1>
+    <h1>cmp-ripple (Demo)</h1>
+    
+    <p>Try clicking the elements on this page or the page wrapper itself.</p>
+    <p>Notice how click events bubble up to the page wrapper.</p>
   
-  <p>Try clicking the elements on this page.</p>
-
-  <button class="button-test button-pink cmp-ripple">Click me</button>
-  <button class="button-test button-green cmp-ripple">Or me!</button>
-  <button class="button-test button-blue cmp-ripple">No! Click me instead</button>
+    <button class="button-test button-pink cmp-ripple">Click me</button>
+    <button class="button-test button-green cmp-ripple">Or me!</button>
+    <button class="button-test button-blue cmp-ripple">No! Click me instead</button>
+    
+    <h2 class="cmp-ripple">Click this heading, too</h1>
+    <p class="cmp-ripple">
+      This is a simple Text.<br>
+      You can tap it too … – but you already knew that.<br>
+      The circle has a different color though.
+    </p>
+    
+    <p>Finally, tap inside this div:</p>
+    
+    <div class="big-box cmp-ripple">
+      click me
+    </div>
   
-  <h2 class="cmp-ripple">Click this heading, too</h1>
-  <p class="cmp-ripple">
-    This is a simple Text.<br>
-    You can click it too … – but you already knew that.<br>
-    The circle has a different color though.
-  </p>
-  
-  <div class="big-box cmp-ripple">
-    click me
   </div>
   
   <script src="cmp-ripple.js"></script>
