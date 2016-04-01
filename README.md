@@ -7,6 +7,8 @@ Lightweight Element Ripple, similar to [Material Design Lite](http://www.getmdl.
 - CSS-animation only
 - easy adaption
 
+[Check out the demo!](https://compuccino.github.io/cmp-ripple/)
+
 FAQ
 ---
 
