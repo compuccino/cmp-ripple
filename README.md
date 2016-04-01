@@ -22,8 +22,9 @@ TODO
 
 ### How does this work?
 
-The script function injects a small helper element on the click event position inside the parsed objects.
+The script function injects a small helper element on the click event position inside the parsed objects.  
 Like the original Material UI package, it registers multiple concurrent clicks.
 
-You can style and animate the ripple via CSS, currently it's styled to display an expanding white circle fading out but you can create whatever you like.
+You can style and animate the ripple via CSS.
+Currently it's styled to display an expanding white circle fading out but you can create whatever you like.
 Once the animation is finished, the element gets removed. No additional wrappers or bindings are needed.
