@@ -5,7 +5,8 @@ cmpRipple = function(elements) {
   //TODO: specify browser support
   //TODO: Attribute holder
   //TODO: custom class attribute
-  //TODO: jQuery-object-checker, in case someone forgets `[0]`
+  //TODO: prevent bubbling via attribute?
+  //TODO: jQuery-object-checker in case someone forgets `[0]`
 
   'use strict';
 
