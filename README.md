@@ -3,9 +3,9 @@ cmp-ripple
 
 Lightweight Element Ripple, similar to [Material Design Lite](http://www.getmdl.io).
 
-- no dependencies
-- CSS-animation only
-- easy adaption
+- no dependencies :unlock:
+- CSS-animation only :ocean:
+- easy adaption :coffee:
 
 [Check out the demo!](https://compuccino.github.io/cmp-ripple/)
 
