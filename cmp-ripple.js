@@ -1,7 +1,9 @@
 cmpRipple = function(elements, options) {
+  //TODO: add version/copyright notice + version tag
   //TODO: build encapsulated JS file
   //TODO: destroy() function removing click event handlers
   //TODO: build animationEvent/rippleElement only once?
+  //TODO: add init-class for elements to apply standard attributes
   //TODO: specify browser support
   //TODO: jQuery-object-checker in case someone forgets `[0]`
 
