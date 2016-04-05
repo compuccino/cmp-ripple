@@ -69,7 +69,7 @@
 </head>
 <body>
   
-  <div class="body-content cmp-ripple cmp-ripple-1">
+  <div class="body-content cmp-ripple-holder cmp-ripple-1">
 
     <h1>cmp-ripple (Demo)</h1>
     
@@ -78,9 +78,9 @@
     <p>Simply init the elements via <code>cmpRipple(elements);</code>.</p>
     <p>Try clicking the following buttons or the page background itself.</p>
   
-    <button class="button-test button-pink cmp-ripple cmp-ripple-1">Click me</button>
-    <button class="button-test button-green cmp-ripple cmp-ripple-1">Or me!</button>
-    <button class="button-test button-blue cmp-ripple cmp-ripple-1">No! Click me instead</button>
+    <button class="button-test button-pink cmp-ripple-holder cmp-ripple-1">Click me</button>
+    <button class="button-test button-green cmp-ripple-holder cmp-ripple-1">Or me!</button>
+    <button class="button-test button-blue cmp-ripple-holder cmp-ripple-1">No! Click me instead</button>
     
     <script>
       cmpRipple(
@@ -94,9 +94,9 @@
     <p>Limit your query to single elements, if you want to.</p>
     <p>Notice how click events bubble up to the page wrapper on buttons w/o effect.</p>
     
-    <button class="button-test button-pink cmp-ripple cmp-ripple-2">Click me</button>
-    <button class="button-test button-green cmp-ripple cmp-ripple-2">Or me!</button>
-    <button class="button-test button-blue cmp-ripple cmp-ripple-2">No! Click me instead</button>
+    <button class="button-test button-pink cmp-ripple-holder cmp-ripple-2">Click me not.</button>
+    <button class="button-test button-green cmp-ripple-holder cmp-ripple-2">But me instead!</button>
+    <button class="button-test button-blue cmp-ripple-holder cmp-ripple-2">Click me neither</button>
     
     <script>
       cmpRipple(
@@ -108,9 +108,9 @@
     
     <p>You can still allow for event bubbling via option <code>{ bubble: true }</code>.</p>
     
-    <button class="button-test button-pink cmp-ripple cmp-ripple-3">Click me</button>
-    <button class="button-test button-green cmp-ripple cmp-ripple-3">Or me!</button>
-    <button class="button-test button-blue cmp-ripple cmp-ripple-3">No! Click me instead</button>
+    <button class="button-test button-pink cmp-ripple-holder cmp-ripple-3">Click me</button>
+    <button class="button-test button-green cmp-ripple-holder cmp-ripple-3">Or me!</button>
+    <button class="button-test button-blue cmp-ripple-holder cmp-ripple-3">No! Click me instead</button>
     
     <script>
       cmpRipple(
@@ -121,8 +121,8 @@
     </script>
     
     
-    <h2 class="cmp-ripple cmp-ripple-4">Click this heading, too</h2>
-    <p class="cmp-ripple cmp-ripple-4">
+    <h2 class="cmp-ripple-holder cmp-ripple-4">Click this heading, too</h2>
+    <p class="cmp-ripple-holder cmp-ripple-4">
       This is a simple Text.<br>
       You can tap it too … – but you already knew that.<br>
       The circle has a different color though.
@@ -130,7 +130,7 @@
     
     <p>Tap inside this div:</p>
     
-    <div class="big-box cmp-ripple cmp-ripple-4">
+    <div class="big-box cmp-ripple-holder cmp-ripple-4">
       click me
     </div>
     
