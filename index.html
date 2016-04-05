@@ -65,42 +65,79 @@
     }
   </style>
   <link href="cmp-ripple.css" rel="stylesheet" type="text/css">
+  <script src="cmp-ripple.js"></script>
 </head>
 <body>
   
-  <div class="body-content cmp-ripple">
+  <div class="body-content cmp-ripple cmp-ripple-1">
 
     <h1>cmp-ripple (Demo)</h1>
     
     <a href="https://github.com/compuccino/cmp-ripple/tree/master">See the repo for more informations and docs.</a>
     
-    <p>Try clicking the elements on this page or the page wrapper itself.</p>
-    <p>Notice how click events bubble up to the page wrapper.</p>
+    <p>Simply init the elements via <code>cmpRipple(elements);</code>.</p>
+    <p>Try clicking the following buttons or the page background itself.</p>
   
-    <button class="button-test button-pink cmp-ripple">Click me</button>
-    <button class="button-test button-green cmp-ripple">Or me!</button>
-    <button class="button-test button-blue cmp-ripple">No! Click me instead</button>
+    <button class="button-test button-pink cmp-ripple cmp-ripple-1">Click me</button>
+    <button class="button-test button-green cmp-ripple cmp-ripple-1">Or me!</button>
+    <button class="button-test button-blue cmp-ripple cmp-ripple-1">No! Click me instead</button>
     
-    <h2 class="cmp-ripple">Click this heading, too</h1>
-    <p class="cmp-ripple">
+    <script>
+      cmpRipple(
+        document.querySelectorAll('.cmp-ripple-1')
+      );
+      console.log('done');
+    </script>
+    
+    <h2>Passing a single element</h2>
+    
+    <p>Limit your query to single elements, if you want to.</p>
+    <p>Notice how click events bubble up to the page wrapper on buttons w/o effect.</p>
+    
+    <button class="button-test button-pink cmp-ripple cmp-ripple-2">Click me</button>
+    <button class="button-test button-green cmp-ripple cmp-ripple-2">Or me!</button>
+    <button class="button-test button-blue cmp-ripple cmp-ripple-2">No! Click me instead</button>
+    
+    <script>
+      cmpRipple(
+        document.querySelectorAll('.cmp-ripple-2')[1]
+      );
+    </script>
+    
+    <h2>Allow Event bubbling</h2>
+    
+    <p>You can still allow for event bubbling via option <code>{ bubble: true }</code>.</p>
+    
+    <button class="button-test button-pink cmp-ripple cmp-ripple-3">Click me</button>
+    <button class="button-test button-green cmp-ripple cmp-ripple-3">Or me!</button>
+    <button class="button-test button-blue cmp-ripple cmp-ripple-3">No! Click me instead</button>
+    
+    <script>
+      cmpRipple(
+        document.querySelectorAll('.cmp-ripple-3'),{
+          bubble: true
+        }
+      );
+    </script>
+    
+    
+    <h2 class="cmp-ripple cmp-ripple-4">Click this heading, too</h2>
+    <p class="cmp-ripple cmp-ripple-4">
       This is a simple Text.<br>
       You can tap it too … – but you already knew that.<br>
       The circle has a different color though.
     </p>
     
-    <p>Finally, tap inside this div:</p>
+    <p>Tap inside this div:</p>
     
-    <div class="big-box cmp-ripple">
+    <div class="big-box cmp-ripple cmp-ripple-4">
       click me
     </div>
   
   </div>
   
-  <script src="cmp-ripple.js"></script>
-  <script>
-    var rippleUs = document.querySelectorAll('.cmp-ripple');
-    cmpRipple(rippleUs);
-  </script>
+  
+
   
 </body>
 </html>
