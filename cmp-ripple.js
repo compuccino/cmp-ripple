@@ -1,14 +1,16 @@
-cmpRipple = function(elements) {
+cmpRipple = function(elements, options) {
   //TODO: build encapsulated JS file
   //TODO: destroy() function removing click event handlers
   //TODO: build animationEvent/rippleElement only once?
   //TODO: specify browser support
-  //TODO: Attribute holder
   //TODO: custom class attribute
   //TODO: prevent bubbling via attribute?
   //TODO: jQuery-object-checker in case someone forgets `[0]`
 
   'use strict';
+  
+  /* options */
+  if (!options) {options = {};}
 
   //get browser prefixed animation event
   var animationEvent = stylePrefix('animationend');
