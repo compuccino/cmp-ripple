@@ -4,13 +4,15 @@ cmpRipple = function(elements, options) {
   //TODO: build animationEvent/rippleElement only once?
   //TODO: specify browser support
   //TODO: custom class attribute
-  //TODO: prevent bubbling via attribute?
   //TODO: jQuery-object-checker in case someone forgets `[0]`
 
   'use strict';
   
   /* options */
   if (!options) {options = {};}
+  
+  if (!options.bubble) { options.bubble = false; }
+
 
   //get browser prefixed animation event
   var animationEvent = stylePrefix('animationend');
@@ -27,6 +29,11 @@ cmpRipple = function(elements, options) {
       var rippleMe = elements[index];
       
       rippleMe.addEventListener("click", function( clickEvent ) {
+        
+        //prevent event bubbling
+        if (!options.bubble) {
+          clickEvent.stopPropagation();
+        }
         
         //offset relation = (click offset - element offset) ÷ element dimension
         var offsetRel = {
