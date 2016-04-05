@@ -3,7 +3,6 @@ cmpRipple = function(elements, options) {
   //TODO: destroy() function removing click event handlers
   //TODO: build animationEvent/rippleElement only once?
   //TODO: specify browser support
-  //TODO: custom class attribute
   //TODO: jQuery-object-checker in case someone forgets `[0]`
 
   'use strict';
@@ -11,6 +10,7 @@ cmpRipple = function(elements, options) {
   /* options */
   if (!options) {options = {};}
   
+  if (!options.animationClass) { options.animationClass = 'cmp-ripple-animation'; }
   if (!options.bubble) { options.bubble = false; }
 
 
@@ -43,7 +43,7 @@ cmpRipple = function(elements, options) {
         
         //create element for ripple animation
         var rippleElement = document.createElement('span');
-        rippleElement.className = 'cmp-ripple-animation';
+        rippleElement.className = options.animationClass;
         rippleElement.setAttribute('style','top: '+ offsetRel.top*100 +'%; left: '+ offsetRel.left*100 +'%;');
         
         //self-destruct after animation
