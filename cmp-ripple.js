@@ -1,6 +1,7 @@
 cmpRipple = function(elements, options) {
   //TODO: add version/copyright notice + version tag
   //TODO: build encapsulated JS file
+  //TODO: active state should listen on mousedown + stay triggered on click
   //TODO: destroy() function removing click event handlers
   //TODO: build animationEvent/rippleElement only once?
   //TODO: add init-class for elements to apply standard attributes
