@@ -15,12 +15,12 @@ Usage
 1. Include CSS (or supply your own modification)
 2. Include JS file
 3. Call on elements like this:  
-  ~~~html
-  <script>
-    var rippleUs = document.querySelectorAll('.cmp-ripple');
-    cmpRipple(rippleUs,options);
-  </script>
-  ~~~
+~~~html
+<script>
+  var rippleUs = document.querySelectorAll('.cmp-ripple');
+  cmpRipple(rippleUs,options);
+</script>
+~~~
 
 
 
