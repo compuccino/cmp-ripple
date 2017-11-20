@@ -33,6 +33,11 @@ cmpRipple = function(elements, options) {
 
       rippleMe.addEventListener("click", function( clickEvent ) {
 
+        startRipple(rippleMe, clickEvent);
+
+      });
+
+      var startRipple = function(element, clickEvent) {
         //prevent event bubbling
         if (!options.bubble) {
           clickEvent.stopPropagation();
@@ -56,8 +61,8 @@ cmpRipple = function(elements, options) {
 
         //trigger animation
         clickEvent.target.insertBefore(rippleElement, clickEvent.target.firstChild);
+      }
 
-      });
     }
 
   }
