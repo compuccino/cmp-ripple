@@ -67,11 +67,18 @@ cmpRipple = function(elements, options) {
 //via https://youmightnotneedjquery.com
 offset = function(element){
   var rect = element.getBoundingClientRect();
-  
+  /*
+    note:
+
+    we removed `document.body.scrollTop` and `document.body.scrollLeft` because
+    these aren't respected – we need to checkback in IE
+
+  */
+
   return offsetObject =
     {
-      top: rect.top + document.body.scrollTop,
-      left: rect.left + document.body.scrollLeft
+      top: rect.top,
+      left: rect.left
     }
 
 }
