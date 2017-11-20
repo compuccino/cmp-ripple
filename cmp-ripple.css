@@ -10,14 +10,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  
+
   margin-left: -50%;
   margin-top: -50%;
-  
+
   /* fallback w/o click value */
   top: 50%;
   left: 50%;
-  
+
   /* enable hardware acceleration */
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -26,26 +26,26 @@
 .cmp-ripple-animation:before {
   content: '';
   display: block;
-  
+
   /* ripple circle */
   background: white;
   border-radius: 50%;
-  
+
   /* square size of element width */
   width: 100%;
   padding-top: 100%; /* doesn't work on webkit, when applied on button parent ?*/
   height: 0;
-  
+
   /* position */
   position: absolute;
-  
+
   /* animation */
   opacity: 0; /* hide element in case animation doesn't trigger */
-  
+
   -webkit-animation-name: ripple-animation;
   -webkit-animation-duration: 2s;
   -webkit-animation-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000); /* easeOutSine */
-  
+
   animation-name: ripple-animation;
   animation-duration:  2s;
   animation-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000); /* easeOutSine */
