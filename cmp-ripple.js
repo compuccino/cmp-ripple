@@ -40,8 +40,8 @@ cmpRipple = function(elements, options) {
 
         //offset relation = (click offset - element offset) ÷ element dimension
         var offsetRel = {
-          left : ( clickEvent.clientX - offset(this).left ) / this.offsetWidth,
-          top  : ( clickEvent.clientY - offset(this).top ) / this.offsetHeight
+          left : ( clickEvent.clientX - offset(clickEvent.target).left ) / clickEvent.target.offsetWidth,
+          top  : ( clickEvent.clientY - offset(clickEvent.target).top ) / clickEvent.target.offsetHeight
         }
 
         //create element for ripple animation
@@ -55,7 +55,7 @@ cmpRipple = function(elements, options) {
         });
 
         //trigger animation
-        this.insertBefore(rippleElement, this.firstChild);
+        clickEvent.target.insertBefore(rippleElement, clickEvent.target.firstChild);
 
       });
     }
