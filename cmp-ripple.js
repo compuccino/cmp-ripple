@@ -31,7 +31,7 @@ cmpRipple = function(elements, options) {
     for (var index = 0; index < elements.length; index++) {
       var rippleMe = elements[index];
 
-      rippleMe.addEventListener("click", function( clickEvent ) {
+      rippleMe.addEventListener("mousedown", function( clickEvent ) {
 
         startRipple(rippleMe, clickEvent);
 
