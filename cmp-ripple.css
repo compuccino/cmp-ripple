@@ -51,6 +51,21 @@
   animation-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000); /* easeOutSine */
 }
 
+.cmp-ripple-remove:before {
+  /* WIP, remove later */
+  transform: scale(3);
+  opacity: 0;
+
+  -webkit-animation-name: ripple-remove;
+  -webkit-animation-duration: 0.8s;
+  -webkit-animation-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000); /* easeOutSine */
+
+  animation-name: ripple-remove;
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000); /* easeOutSine */
+
+}
+
 @-webkit-keyframes ripple-animation {
   0% {
     opacity: 0.3;
@@ -71,5 +86,27 @@
   100% {
     opacity: 0.3;
     transform: scale(3);
+  }
+}
+
+
+@-webkit-keyframes ripple-remove {
+  0% {
+    opacity: 0.3;
+    transform: scale(3);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-remove {
+  0% {
+    opacity: 0.3;
+    transform: scale(3);
+  }
+  100% {
+    opacity: 0;
   }
 }
