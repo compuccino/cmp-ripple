@@ -50,26 +50,26 @@ cmpRipple = function(elements, options) {
         }
 
         //create element for ripple animation
-        var rippleElement = document.createElement('span');
-        rippleElement.className = options.animationClass;
-        rippleElement.setAttribute('style','top: '+ offsetRel.top*100 +'%; left: '+ offsetRel.left*100 +'%;');
+        var ripple = document.createElement('span');
+        ripple.className = options.animationClass;
+        ripple.setAttribute('style','top: '+ offsetRel.top*100 +'%; left: '+ offsetRel.left*100 +'%;');
 
         //self-destruct after animation
-        rippleElement.addEventListener(animationEvent, function(event) {
+        ripple.addEventListener(animationEvent, function(event) {
           //TODO: toggle removal only if button is up
-          var rippleElement = event.target;
-          rippleRemove(rippleElement);
+          var ripple = event.target;
+          rippleRemove(ripple);
         });
 
         //trigger animation
-        clickEvent.target.insertBefore(rippleElement, clickEvent.target.firstChild);
+        clickEvent.target.insertBefore(ripple, clickEvent.target.firstChild);
       }
 
-      var rippleRemove = function(rippleElement) {
-        rippleElement.className += ' cmp-ripple-remove';
+      var rippleRemove = function(ripple) {
+        ripple.className += ' cmp-ripple-remove';
 
-        rippleElement.addEventListener(stylePrefix('transitionend'), function(event) {
-          rippleElement.parentNode.removeChild(rippleElement);
+        ripple.addEventListener(stylePrefix('transitionend'), function(event) {
+          ripple.parentNode.removeChild(ripple);
         });
       }
 
