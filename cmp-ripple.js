@@ -66,8 +66,11 @@ cmpRipple = function(elements, options) {
       }
 
       var rippleRemove = function(rippleElement) {
-        //rippleElement.parentNode.removeChild(rippleElement);
         rippleElement.className += ' cmp-ripple-remove';
+
+        rippleElement.addEventListener(stylePrefix('transitionend'), function(event) {
+          rippleElement.parentNode.removeChild(rippleElement);
+        });
       }
 
 
