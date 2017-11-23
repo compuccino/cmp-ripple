@@ -56,7 +56,7 @@ cmpRipple = function(elements, options) {
 
         //self-destruct after animation
         rippleElement.addEventListener(animationEvent, function(event) {
-          //toggle removal if button is up
+          //TODO: toggle removal only if button is up
           var rippleElement = event.target;
           rippleRemove(rippleElement);
         });
