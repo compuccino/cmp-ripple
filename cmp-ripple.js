@@ -55,8 +55,9 @@ cmpRipple = function(elements, options) {
         rippleElement.setAttribute('style','top: '+ offsetRel.top*100 +'%; left: '+ offsetRel.left*100 +'%;');
 
         //self-destruct after animation
-        rippleElement.addEventListener(animationEvent, function() {
-           this.parentNode.removeChild(this);
+        rippleElement.addEventListener(animationEvent, function(event) {
+          var rippleElement = event.target;
+          rippleElement.parentNode.removeChild(rippleElement);
         });
 
         //trigger animation
