@@ -56,13 +56,20 @@ cmpRipple = function(elements, options) {
 
         //self-destruct after animation
         rippleElement.addEventListener(animationEvent, function(event) {
+          //toggle removal if button is up
           var rippleElement = event.target;
-          rippleElement.className += ' cmp-ripple-remove';
+          rippleRemove(rippleElement);
         });
 
         //trigger animation
         clickEvent.target.insertBefore(rippleElement, clickEvent.target.firstChild);
       }
+
+      var rippleRemove = function(rippleElement) {
+        //rippleElement.parentNode.removeChild(rippleElement);
+        rippleElement.className += ' cmp-ripple-remove';
+      }
+
 
     }
 
