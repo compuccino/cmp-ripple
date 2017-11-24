@@ -19,6 +19,12 @@ cmpRipple = function(elements, options) {
   if (!options.animationClass) { options.animationClass = 'cmp-ripple-animation'; }
   if (!options.bubble) { options.bubble = false; }
 
+  var stopBubbling = function(event){
+    //prevent event bubbling
+    if (!options.bubble) {
+      event.stopPropagation();
+    }
+  }
 
   //get browser prefixed animation event
   var animationEvent = stylePrefix('animationend');
@@ -35,20 +41,16 @@ cmpRipple = function(elements, options) {
       var rippleMe = elements[index];
 
       rippleMe.addEventListener("mousedown", function( clickEvent ) {
-        //prevent event bubbling
-        if (!options.bubble) {
-          clickEvent.stopPropagation();
-        }
-
+        stopBubbling(clickEvent);
+        startRipple(rippleMe, clickEvent);
+      });
         startRipple(rippleMe, clickEvent);
       });
 
       rippleMe.addEventListener("mouseup", function( clickEvent ) {
-        //prevent event bubbling
-        if (!options.bubble) {
-          clickEvent.stopPropagation();
-        }
-        
+        stopBubbling(clickEvent);
+        rippleRemove(clickEvent.currentTarget.querySelector('.cmp-ripple-animation'));
+      });
         rippleRemove(clickEvent.currentTarget.querySelector('.cmp-ripple-animation'));
       });
 
