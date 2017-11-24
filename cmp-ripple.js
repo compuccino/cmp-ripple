@@ -7,6 +7,7 @@ cmpRipple = function(elements, options) {
   //TODO: add init-class for elements to apply standard attributes
   //TODO: specify browser support
   //TODO: jQuery-object-checker in case someone forgets `[0]`
+  //TODO: calculate ripple width depending on element size
 
   'use strict';
 
