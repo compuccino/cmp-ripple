@@ -33,19 +33,24 @@ cmpRipple = function(elements, options) {
       var rippleMe = elements[index];
 
       rippleMe.addEventListener("mousedown", function( clickEvent ) {
+        //prevent event bubbling
+        if (!options.bubble) {
+          clickEvent.stopPropagation();
+        }
 
         startRipple(rippleMe, clickEvent);
       });
 
       rippleMe.addEventListener("mouseup", function( clickEvent ) {
-        rippleRemove(clickEvent.currentTarget.querySelector('.cmp-ripple-animation'));
-      });
-
-      var startRipple = function(element, clickEvent) {
         //prevent event bubbling
         if (!options.bubble) {
           clickEvent.stopPropagation();
         }
+        
+        rippleRemove(clickEvent.currentTarget.querySelector('.cmp-ripple-animation'));
+      });
+
+      var startRipple = function(element, clickEvent) {
 
         //offset relation = (click offset - element offset) ÷ element dimension
         var offsetRel = {
