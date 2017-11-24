@@ -8,6 +8,7 @@ cmpRipple = function(elements, options) {
   //TODO: specify browser support
   //TODO: jQuery-object-checker in case someone forgets `[0]`
   //TODO: calculate ripple width depending on element size
+  //TODO: allow for 2 ripple variants (snappy vs ripple)
 
   'use strict';
 
