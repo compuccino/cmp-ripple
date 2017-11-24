@@ -44,13 +44,9 @@ cmpRipple = function(elements, options) {
         stopBubbling(clickEvent);
         startRipple(rippleMe, clickEvent);
       });
-        startRipple(rippleMe, clickEvent);
-      });
 
       rippleMe.addEventListener("mouseup", function( clickEvent ) {
         stopBubbling(clickEvent);
-        rippleRemove(clickEvent.currentTarget.querySelector('.cmp-ripple-animation'));
-      });
         rippleRemove(clickEvent.currentTarget.querySelector('.cmp-ripple-animation'));
       });
 
