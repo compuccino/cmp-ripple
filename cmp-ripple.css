@@ -2,6 +2,9 @@
   /* for circle pos */
   position: relative;
   overflow: hidden;
+
+  /* hide tap box on iOS */
+  -webkit-tap-highlight-color: transparent;
 }
 
 .cmp-ripple-animation {
