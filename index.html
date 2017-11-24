@@ -20,6 +20,11 @@
       overflow: hidden;
     }
 
+    .body-content > * {
+      /* this way, the ripple is rendered behind elements */
+      position: relative;
+    }
+
     .body-content > .cmp-ripple-animation:before{
       background: DeepPink;
     }
