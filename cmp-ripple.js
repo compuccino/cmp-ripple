@@ -34,6 +34,7 @@ cmpRipple = function(elements, options) {
       rippleMe.addEventListener("mousedown", function( clickEvent ) {
 
         startRipple(rippleMe, clickEvent);
+      });
 
       rippleMe.addEventListener("mouseup", function( clickEvent ) {
         rippleRemove(clickEvent.target.querySelector('.cmp-ripple-animation'));
