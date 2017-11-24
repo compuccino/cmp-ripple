@@ -50,8 +50,12 @@ cmpRipple = function(elements, options) {
         rippleRemove(clickEvent.currentTarget.querySelector('.cmp-ripple-animation'));
       });
 
-      var startRipple = function(element, clickEvent) {
+      rippleMe.addEventListener("mouseleave", function( clickEvent ) {
+        stopBubbling(clickEvent);
+        rippleRemove(clickEvent.currentTarget.querySelector('.cmp-ripple-animation'));
+      });
 
+      var startRipple = function(element, clickEvent) {
         //offset relation = (click offset - element offset) ÷ element dimension
         var offsetRel = {
           left : ( clickEvent.clientX - offset(clickEvent.currentTarget).left ) / clickEvent.currentTarget.offsetWidth,
