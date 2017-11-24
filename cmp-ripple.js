@@ -35,6 +35,8 @@ cmpRipple = function(elements, options) {
 
         startRipple(rippleMe, clickEvent);
 
+      rippleMe.addEventListener("mouseup", function( clickEvent ) {
+        rippleRemove(clickEvent.target.querySelector('.cmp-ripple-animation'));
       });
 
       var startRipple = function(element, clickEvent) {
@@ -54,26 +56,18 @@ cmpRipple = function(elements, options) {
         ripple.className = options.animationClass;
         ripple.setAttribute('style','top: '+ offsetRel.top*100 +'%; left: '+ offsetRel.left*100 +'%;');
 
-        //self-destruct after animation
-        ripple.addEventListener(animationEvent, function(event) {
-          //TODO: toggle removal only if button is up
-          var ripple = event.target;
-          rippleRemove(ripple);
-        });
-
         //trigger animation
         clickEvent.target.insertBefore(ripple, clickEvent.target.firstChild);
       }
 
-      var rippleRemove = function(ripple) {
-        ripple.className += ' cmp-ripple-remove';
-
-        ripple.addEventListener(stylePrefix('transitionend'), function(event) {
-          ripple.parentNode.removeChild(ripple);
-        });
-      }
-
-
+    }
+    
+    var rippleRemove = function(ripple) {
+      ripple.className += ' cmp-ripple-remove';
+    
+      ripple.addEventListener(stylePrefix('transitionend'), function(event) {
+        event.target.parentNode.removeChild(event.target);
+      });
     }
 
   }
