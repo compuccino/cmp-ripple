@@ -44,10 +44,10 @@
   transform: scale(3);
 
   /* fadeout settings */
-  transition: opacity 0.8s;
+  transition: opacity 0.4s;
 
   animation-name: ripple-animation;
-  animation-duration: 0.8s;
+  animation-duration: 0.2s;
   animation-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000); /* easeOutSine */
 }
 
