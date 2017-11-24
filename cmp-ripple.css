@@ -39,16 +39,17 @@
   /* position */
   position: absolute;
 
-  /* animation */
+  /* animation final frame, fadeout first frame */
   opacity: 0.3;
   transform: scale(3);
 
-  /* fadeout settings */
-  transition: opacity 0.4s;
-
+  /* animation */
   animation-name: ripple-animation;
   animation-duration: 0.2s;
   animation-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000); /* easeOutSine */
+
+  /* fadeout settings */
+  transition: opacity 0.4s;
 }
 
 .cmp-ripple-remove:before {
@@ -57,7 +58,7 @@
 
 @keyframes ripple-animation {
   0% {
-    opacity: 0;
+    opacity: 0.1;
     transform: scale(0);
   }
 }
