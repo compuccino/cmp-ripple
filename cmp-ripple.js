@@ -1,14 +1,15 @@
 cmpRipple = function(elements, options) {
   //TODO: add version/copyright notice + version tag
-  //TODO: build encapsulated JS file
-  //TODO: active state should listen on mousedown + stay triggered on click
+  //TODO: track touch events
+  //TODO: build encapsulated JS file (like: new cmpRipple() …)
   //TODO: destroy() function removing click event handlers
-  //TODO: build animationEvent/rippleElement only once?
+  //TODO: build animationEvent/rippleElement only once? (via _self )
   //TODO: add init-class for elements to apply standard attributes
   //TODO: specify browser support
   //TODO: jQuery-object-checker in case someone forgets `[0]`
-  //TODO: calculate ripple width depending on element size
-  //TODO: allow for 2 ripple variants (snappy vs ripple)
+  //TODO: calculate ripple radius depending on element size
+  //TODO: allow for 2 ripple variants (snappy: new vs ripple: old behaviour)
+  //TODO: even better: allow for snappy behaviour on mouseDown + ripple on touchDown
 
   'use strict';
 
