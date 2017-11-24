@@ -39,7 +39,7 @@
   /* position */
   position: absolute;
 
-  /* animation final frame, fadeout first frame */
+  /* fadein animation final frame + fadeout transition first frame */
   opacity: 0.3;
   transform: scale(3);
 
