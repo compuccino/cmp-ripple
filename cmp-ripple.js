@@ -72,8 +72,16 @@ cmpRipple = function(elements, options) {
     }
     
     var rippleRemove = function(ripple) {
-      ripple.className += ' cmp-ripple-remove';
+      ripple.className += ' cmp-ripple-remove'; //triggers fadeout
     
+      //1st case: init ripple not finished
+      //this removes the element in case the initial animation is still running
+      ripple.addEventListener(stylePrefix('animationend'), function(event) {
+        event.currentTarget.parentNode.removeChild(event.currentTarget);
+      });
+    
+      //2nd case: ripple animation ended, fadeout transition was triggered
+      //if the button is already filled this listens on the fadeout animation
       ripple.addEventListener(stylePrefix('transitionend'), function(event) {
         event.currentTarget.parentNode.removeChild(event.currentTarget);
       });
