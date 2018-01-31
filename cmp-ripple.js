@@ -1,6 +1,6 @@
 cmpRipple = function(elements, options) {
   //TODO: add version/copyright notice + version tag
-  //TODO: track touch events
+  //TODO: right now touch + click trigger on mobile: should be: fallback to click on missing touch coordinates
   //TODO: build encapsulated JS file (like: new cmpRipple() …)
   //TODO: destroy() function removing click event handlers
   //TODO: build animationEvent/rippleElement only once? (via _self )
